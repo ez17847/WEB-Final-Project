@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="Title"> Medicalendar </title>
+        <br>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
+    </head>
+    <body class="content">
+        <header class="top">
+            <h1> Medicalendar </h1>
+            <h2> </h2>
+            <h3> Managging your time, saving you ... time </h3>
+            <div id="logo" class="rotating"></div>
+        </header>
+
+        <main class="main">
+            <div>
+                <form >
+                    <div class="TextInput">
+                        Username: 
+                        <br>
+                        <input type="text" name="Username" id="UsernameL"/><br>
+                        <span class="errorMessage" id="errorUser"></span> 
+                        <br><br>
+                        Password: 
+                        <br>
+                        <input type="password" name="Password" id="PasswordL"/><br>
+                        <span class="errorMessage" id="errorPswd"></span> 
+                        <br><br>
+                    </div>
+                                
+                    Remember Me: 
+                    <input type="checkbox" name="Remember" id="RememberL"/>
+                    <br>
+                    <br><br>
+
+                    <div >
+                        <span>
+                            <input type="submit" name="submit button" value="submit" id="submitForm" class="buttonAnim"/>
+                        </span>
+                        <span>
+                            <input type="submit" name="cancel button" value="register" id="cancelForm" class="buttonAnim"/>
+                        </span>
+                    </div>
+
+                    <br>
+                </form>
+            </div>
+        </main>
+        <footer class="bottom">
+            <footer>Web Applications - Final Project</footer>
+        </footer>
+        <script src="./jquery/jquery.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./jquery/indexJQ.js"></script>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Registry - The Jammer </title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+    </head>
+    <body class="contentR">
+        <header class="topRegister">
+            <h1> The Jammer </h1>
+            <h3> Connecting people since 2017 </h3>
+            <img src="../images/jammer_logo.png" title="Logo"/>
+            <br>
+        </header>
+
+        <main>
+            <div>
+                <form action="../index.html">
+                    <fieldset>
+                        <legend>New account registry</legend>
+                        <br>
+                        <div class="TextInput">
+                            First Name: 
+                            <br>
+                            <input type="text" name="FName" id="NameR"/>
+                            <br>
+                            <span class="errorMessage" id="error1"></span> 
+                            <br>
+                            <br>
+                            Last Name: 
+                            <br>
+                            <input type="text" name="LName" id="LNameR"/>
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="error2"></span> 
+                            <br><br>
+                            UserName: 
+                            <br>
+                            <input type="text" name="UserNameR"  id="UserNameR"/>
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="error3"></span> 
+                            <br><br>
+                            Email: 
+                            <br>
+                            <input type="email" name="EMailR" id="EMailR"/>
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="error4"></span> 
+                            <br><br>
+                            Password: 
+                            <br>
+                            <input type="password" name="PasswordR" id="PasswordR"/>
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="error5"></span> 
+                            <br><br>
+                            Password Confirmation: 
+                            <br>
+                            <input type="password" name="RPasswordR" id="RPasswordR"/>
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="error6"></span> 
+                            <br><br>
+                        </div>
+
+                            Country
+                            <br>
+                            <select name="Country" class="Countries" id="Country">
+                                <option value="0">Select a Country</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="USA">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="England">England</option>
+                                <option value="Australia">Australia</option>
+                                <option value="France">France</option>
+                                <option value="Bhutam">Bhutan</option>
+                                <option value="Bostswana">Bostswana</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="error7"></span> 
+                            <br><br>
+
+                            Gender:
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="M"/>Masculine
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="F"/>Femenine
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="O"/>Other
+                            <br>
+                            <br>
+                            <span class="errorMessage" id="errorGender"></span> 
+                            <br>
+                            <br>
+
+                            <div>
+                                <span class="exitoMessage" id="exitoPHP"></span>
+                                <span class="errorMessage" id="errorPHP"></span> 
+                                    
+                                <br>
+                                <span>
+                                    <input type="submit" name="submit button" value="submit" id="submitFormR" class="buttons"/>
+                                </span>
+                                <span>
+                                    <input type="submit" name="cancel button" value="clear" id="clearFormR" class="buttons"/>
+                                </span>
+                            </div>
+                        </fieldset>
+                </form>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../jquery/registroJQ.js"></script>
+    </body>
+</html>

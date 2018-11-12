@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Registry - Medicalendar </title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/stylesRegistration.css" type="text/css"/>
+    </head>
+    <body class="contentR">
+        <header class="topRegister">
+            <h1> MediCalendar </h1>
+            <br>
+            <br>
+        </header>
+
+        <main>
+            <div>
+                <form action="../index.html">
+                    <fieldset>
+                        <legend>New account registry</legend>
+                        <br>
+                        <div class="TextInput">
+                            First Name: 
+                            <br>
+                            <input type="text" name="FName" id="NameR"/>
+                            <br>
+                            <span class="errorMessage" id="errorName"></span> 
+                            <br>
+                            
+                            Last Name: 
+                            <br>
+                            <input type="text" name="LName" id="LNameR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorLast"></span> 
+                            <br>
+                            UserName: 
+                            <br>
+                            <input type="text" name="UserNameR"  id="UserNameR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorUser"></span> 
+                            <br>
+                            Email: 
+                            <br>
+                            <input type="email" name="EMailR" id="EMailR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorMail"></span> 
+                            <br>
+                            Password: 
+                            <br>
+                            <input type="password" name="PasswordR" id="PasswordR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorPass"></span> 
+                            <br>
+                            Password Confirmation: 
+                            <br>
+                            <input type="password" name="RPasswordR" id="RPasswordR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorConfirm"></span> 
+                            <br>
+                        
+
+                            Country
+                            <br>
+                            <select name="Country" class="Countries" id="Country">
+                                <option value="0">Select a Country</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="USA">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="England">England</option>
+                                <option value="Australia">Australia</option>
+                                <option value="France">France</option>
+                                <option value="Bhutam">Bhutan</option>
+                                <option value="Bostswana">Bostswana</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorCountry"></span> 
+                            <br>
+
+                            Gender:
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="M"/>Masculine
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="F"/>Femenine
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="O"/>Other
+                            <br>
+                            
+                            <span class="errorMessage" id="errorGender"></span> 
+                            <br>
+                            
+                            <label for="Doctor">Are you a service provider? &nbsp; </label> 
+                            <input name="Doctor" type="checkbox" id="CheckIfDoctor" value="Doctor">
+        					<br>
+        					<b>The services may be as a psycologist, doctor, psychiatrist, tutor, etc...</b><br><br>
+                            
+                            <div class=hiddenElement id=ifIsDoctor>
+        					    Fields with * are mandatory
+        					    <br>
+        					    <br>
+        				        <label id="tarjeta">PayPal: &nbsp; </label><br> 
+        				        <input name="Tarjeta" type="text" id="pay"><br>
+        				        <span class="errorMessage" id="errorPay"></span> 
+                                <br><br>
+        				        
+        				        <label for="clinica">*Clinic/Office: &nbsp; </label><br> 
+        				        <input name="Clinica" type="text"  id="clinic" ><br><span class="errorMessage" id="errorClinic"></span> 
+                            <br><br>
+        				        
+        				        <label for="Estado">*Address: &nbsp; </label><br> 
+        				        <input name="Estado" type="text"  id="address" >
+        				        
+        				        <br><br>Address format: Country, State, City, Street, Outside Number, ZIP <br> Delimited by comas
+        				        <br>
+        				        <span class="errorMessage" id="errorAddress"></span> 
+                                <br><br>
+        				        
+        				        
+        				        <label for="titulo">*Tittle: &nbsp; </label>
+        				        <br>
+        				        <select id="tittle" name="titulo">
+        				            <option value="0">Select a titlle...</option>
+        				            <option value="medico">Medic/Doctor</option>
+                                    <option value="psicologo">Psychologist</option>
+                                    <option value="psiquiatra">Psychiatrist</option>
+                                    <option value="dentista">Dentist</option>
+                                    <option value="maestro">Teacher/tutor</option>
+                                </select>
+                                
+                                <br>
+                                <span class="errorMessage" id="errorTittle"></span> 
+                                <br>
+                                <br>
+        				        <label for="Especialidad">*Speciality: &nbsp; </label><br>
+        				        <input name="Especialidad" type="text"  id="speciality" ><br>
+        				        <span class="errorMessage" id="errorSpeciality"></span> 
+                                <br><br>
+        				        
+        				        <label for="Servicio1">*Service 1: &nbsp; </label><br>
+        				        <input name="Servicio1" type="text"  id="service1" ><br><br>
+        				        
+        				        <label for="Servicio2">Service 2: &nbsp; </label><br>
+        				        <input name="Servicio2" type="text"  id="service2"><br><br>
+        				        
+        				        <label for="Servicio3">Service 3: &nbsp; </label><br>
+        				        <input name="Servicio3" type="text"  id="service3"><br><br>
+        				        
+        				        <label for="Servicio4">Service 4: &nbsp; </label><br>
+        				        <input name="Servicio4" type="text"  id="service4"><br><br>
+        				        <br>
+        				        <span class="errorMessage" id="errorService"></span> 
+                                <br>
+        			        </div>
+        			        </div>
+
+                            <div>
+                                <span class="exitoMessage" id="exitoPHP"></span>
+                                <span class="errorMessage" id="errorPHP"></span> 
+                                    
+                                <br>
+                                <span>
+                                    <input type="submit" name="submit button" value="submit" id="submitFormR" class="buttonAnim"/>
+                                </span>
+                                <span>
+                                    <input type="submit" name="cancel button" value="clear" id="clearFormR" class="buttonAnim"/>
+                                </span>
+                            </div>
+                        </fieldset>
+                </form>
+            </div>
+        </main>
+        <footer class="bottom">
+            <footer>Web Applications - Final Project</footer>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../jquery/registroJQ.js"></script>
+    </body>
+</html>

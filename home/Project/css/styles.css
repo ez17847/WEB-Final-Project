@@ -1,0 +1,265 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.content{
+	max-width: 500px;
+	margin:auto;
+	text-align: center;
+	background:#000066;
+	color:white;
+}
+
+.content:hover{
+	background-image: url("http://www.abc.net.au/news/image/9115390-3x2-940x627.jpg");
+	background-size: cover;
+}
+
+.contentH{
+	text-align: center;
+	background:#000066;
+	color:white;
+}
+
+.contentH:hover{
+	background-image: url("http://www.abc.net.au/news/image/9115390-3x2-940x627.jpg");
+	background-size: cover;
+}
+
+.contentH > header{
+	padding: 10px 40px;
+	background: url('../images/jammer_logo.png') repeat center  #cce9f8;
+}
+
+.parte1 > p{
+	margin:auto;
+	max-width: 130px;
+	max-height: 160px;
+	padding: 5%;
+}
+
+.parte1 > p:hover{
+	background-image: url("https://media.giphy.com/media/eebmNnxxtSNiw/giphy.gif");
+	background-size: cover;
+}
+
+.contentR{
+	max-width: 500px;
+	margin:auto;
+	text-align: center;
+	background-image: url("http://www.abc.net.au/news/image/9115390-3x2-940x627.jpg");
+	background-size: cover;
+	color:white;
+}
+
+.bottom{
+	position: fixed;
+	bottom: 0px;
+}
+
+.TextInput{
+	color: white;
+}
+
+.Title{
+	text-shadow: 3px 2px green;
+}
+
+
+.buttons {
+    border: none;
+    color: green;
+    padding: 15px 32px;
+    border: 2px solid #4CAF50;
+    border-radius: 20%;
+}
+
+.buttons:hover{
+	cursor: pointer;
+}
+
+.header{
+	padding-bottom: 500px;
+}
+
+#cancelForm{
+	background: red;
+}
+
+#buttonCancel:hover{
+	background: yellow; 
+}
+
+#buttonSubmit:hover{
+	background: blue; 
+}
+
+
+.top{
+	padding-bottom: 10px;
+	border: 20px;
+	border-style: outset;
+	border-radius: 150px;
+}
+
+.top:hover{
+	background-image: url("https://media.giphy.com/media/DXp2Qp5RsNHkA/giphy.gif");
+	background-size: cover;
+}
+
+.main{
+	padding-top: 70px;
+	padding-bottom: 70px;
+	border: 2px solid #dddddd;
+	border-radius: 200px;
+}
+
+.main > div{
+	padding: 50px;
+}
+
+.main:hover{
+	border-color: yellow;
+	background:#006666;
+}
+
+fieldset{
+	border-color: white;
+	border-radius: 200px;
+}
+
+fieldset:hover{
+	border-color: yellow;
+	background:#006066;
+	padding: 20px;
+	border-radius: 150px;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.topRegister > h1{
+	background:#006996;
+}
+
+.radio{
+	vertical-align: middle;
+	margin: 0px;
+}
+
+nav{
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+#menu{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #cccccc;
+	overflow: hidden;
+	font-size: 15px;
+}
+
+#menu > li{
+	float: left;
+	padding: 20px;
+	margin-left: 10%;
+}
+
+#menu > li:hover{
+	background-color: #9c9c9c;
+	color: white;
+	cursor: pointer; 
+}
+
+body > header > h1{
+	padding: 20px;
+}
+
+.errorMessage{
+	color: red;
+}
+
+.exitoMessage{
+	color: yellow;
+}
+
+#commentArea{
+	margin: 75px;
+	background-color: #004d;
+	border-radius: 200px;
+}
+
+.commentJQ{
+	width: 75%;
+	border: 1px solid #4CAF50;
+	margin: auto;
+	border-radius: 5px;
+}
+
+.answerComment{
+
+}
+
+.hiddenElement{
+	display: none;
+}
+
+.selected{
+	background-color: #9c9c9c;
+	color: white;
+}
+
+.contactCard{
+	margin: 5px;
+	padding: 10px;
+	border: 2px solid #dddddd;
+}
+
+.contactsName{
+	font-weight: bold;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

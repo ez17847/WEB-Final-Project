@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HOME - Medicalendar </title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/stylesSchedule.css" type="text/css"/>
+        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    
+        
+    </head>
+    <body class="contentH">
+        <header class="topRegister">
+            <div class="foo">
+              <span class="letter" data-letter="A">A</span>
+              <span class="letter" data-letter="G">G</span>
+              <span class="letter" data-letter="E">E</span>
+              <span class="letter" data-letter="N">N</span>
+              <span class="letter" data-letter="D">D</span>
+              <span class="letter" data-letter="A">A</span>
+            </div>
+        </header>
+        <nav class="navbar">
+        	<ul class="nav menu">
+        		<li id="home" class="selected" >
+        			Home
+        			<!--
+        			<ul class="dropdown">
+        				<li>Menu 1</li>
+        				<li>Menu 2</li>
+        				<li>Menu 3</li>
+        				<li>Menu 4</li>
+        				<li>Menu 5</li>
+        				<li>Menu 6</li>
+        			</ul>-->
+        		</li>
+        		<li id="search">
+        			Search Users
+        		</li>
+        		<li id="chat">
+        			ChatBot
+        		</li>
+        		<li id="data">
+        			My Data
+        		</li>
+        		<li id="requests">
+        			Friend Requests
+        		</li>
+        		<li id="friends" >
+        			Friends
+        			<ul class="dropdown">
+        				<li  class="hiddenElement friendL1 friendInfo">Menu 1</li>
+        				<li  class="hiddenElement friendL2 friendInfo">Menu 2</li>
+        				<li  class="hiddenElement friendL3 friendInfo">Menu 3</li>
+        				<li  class="hiddenElement friendL4 friendInfo">Menu 4</li>
+        				<li  class="hiddenElement friendL5 friendInfo">Menu 5</li>
+        			</ul>					
+        		</li>
+        		<li id="information" class="hiddenElement">
+                    Information
+                </li>
+                <li id="logout">
+        			Logout
+        		</li>
+        	</ul>
+        </nav>
+        <main>
+            <section id="homeSection">
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <span class="close">&times;</span>
+                       <!--<h2>Appointments</h2>-->
+                      <h2 class = "DateSelected"></h2>
+                    </div>
+                    <div class="btn-group">
+                      <button class="min0 minButton"></button>
+                      <button class="min1 minButton"></button>
+                      <button class="min2 minButton"></button>
+                      <button class="min3 minButton"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-body-Cancel hiddenElement">
+                        <h3>Do you want to cancel this Event?</h3>
+                        <div class="pen-wrapper">
+                            <div class="pen-wrapper__inner">
+                                <div class="buton-cover button-3d">
+                                  <button class="btn btn--primary">
+                                    <div class="btn__txt--inactive">Delete</div>
+                                    <div class="btn__txt--active">Are you sure?</div>
+                                  </button>
+                                  <div class="button-3d__dropdown">
+                                    <div class="button-set">
+                                      <button class="btn btn--primary ConfirmDelete">Delete</button>
+                                      <button class="btn btn--gray ConfirmCancel">Cancel</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+                    </div>
+                    <div class="modal-footer">
+                      <h3 class="modal-headerH"></h3>
+                    </div>
+                  </div>
+                </div>
+                <div id="myModalA" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <span class="close" id="closeA">&times;</span>
+                      <h2>Add Event</h2>
+                    </div>
+                    <div class="modalA-body">
+                        <!-- CREATE AN APPOINTMENT ON MY AGENDA -->
+                        <form class="form-style-9">
+                        <ul>
+                        <li>
+                            <input type="date" name="date" class="field-style field-split align-left" placeholder="Date" id="DateA" required/>
+                        </li>
+                        <li>
+                            <select name="Hour" class="field-style field-split align-left" id="Hour">
+                                <option value="0">Start Hour</option>
+                                <option value="8.0">8:00</option> <option value="8.1">8:15</option> <option value="8.2">8:30</option> <option value="8.3">8:45</option>
+                                <option value="9.0">9:00</option> <option value="9.1">9:15</option> <option value="9.2">9:30</option> <option value="9.3">9:45</option>
+                                <option value="10.0">10:00</option> <option value="10.1">10:15</option> <option value="10.2">10:30</option> <option value="10.3">10:45</option>
+                                <option value="11.0">11:00</option> <option value="11.1">11:15</option> <option value="11.2">11:30</option> <option value="11.3">11:45</option>
+                                <option value="12.0">12:00</option> <option value="12.1">12:15</option> <option value="12.2">12:30</option> <option value="12.3">12:45</option>
+                                <option value="13.0">13:00</option> <option value="13.1">13:15</option> <option value="13.2">13:30</option> <option value="13.3">13:45</option>
+                                <option value="14.0">14:00</option> <option value="14.1">14:15</option> <option value="14.2">14:30</option> <option value="14.3">14:45</option>
+                                <option value="15.0">15:00</option> <option value="15.1">15:15</option> <option value="15.2">15:30</option> <option value="15.3">15:45</option>
+                                <option value="16.0">16:00</option> <option value="16.1">16:15</option> <option value="16.2">16:30</option> <option value="16.3">16:45</option>
+                                <option value="17.0">17:00</option> <option value="17.1">17:15</option> <option value="17.2">17:30</option> <option value="17.3">17:45</option>
+                                <option value="18.0">18:00</option> <option value="18.1">18:15</option> <option value="18.2">18:30</option> <option value="18.3">18:45</option>
+                                <option value="19.0">19:00</option> <option value="19.1">19:15</option> <option value="19.2">19:30</option> <option value="19.3">19:45</option>
+                                <option value="20.0">20:00</option> <option value="20.1">20:15</option> <option value="20.2">20:30</option> <option value="20.3">20:45</option>
+                            </select>
+                            <select name="Duration" class="field-style field-split align-right" id="Duration">
+                                <option value="0">Duration in minutes</option>
+                                <option value="0">15</option>
+                                <option value="1">30</option>
+                                <option value="2">45</option>
+                                <option value="3">60</option>
+                            </select>
+                        </li>
+                        <li>
+                        <textarea name="description" class="field-styleP" placeholder="Description" maxlength="150"     id="Description"></textarea>
+                        </li>
+                        <li>
+                            Number of weeks to repeat: 
+                            <select name="Weeks" class="field-style field-split align-left" id="Weeks">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </li>
+                        <li>
+                            <span id="errorAddEvent"></span>
+                        </li>
+                        <li>
+                        <input type="submit" value="Save Event" class="buttonAnim" id="saveEvent"/>
+                        </li>
+                        </ul>
+                        </form>
+                    </div>
+                    <div id="resultsEvent" class="hiddenElement">
+                    </div>
+                    <div class="modal-footer">
+                      <h3 class="modal-headerH"></h3>
+                    </div>
+                  </div>
+                </div>
+                <form style="display:inline;" method="post" >
+                    <a href="#" class="arrow left" id="arrow-left"></a>
+                        <table id="horario">
+                            <tr>
+                                <th id="lu"></th>
+                                <th id="ma"></th>
+                                <th id="mi"></th>
+                                <th id="ju"></th>
+                                <th id="vi"></th>
+                                <th id="sa"></th>
+                                <th id="do"></th>
+                            </tr>
+                            <tr>
+                                <td><input id="lu8" class="scheduleButton"  type="submit" value="lu 8:00"></td>
+                                <td><input id="ma8" class="scheduleButton"  type="submit" value="ma 8:00"></td>
+                                <td><input id="mi8" class="scheduleButton"  type="submit" value="mi 8:00"></td>
+                                <td><input id="ju8" class="scheduleButton"  type="submit" value="ju 8:00"></td>
+                                <td><input id="vi8" class="scheduleButton"  type="submit" value="vi 8:00"></td>
+                                <td><input id="sa8" class="scheduleButton"  type="submit" value="sa 8:00"></td>
+                                <td><input id="do8" class="scheduleButton"  type="submit" value="do 8:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu9" class="scheduleButton"  type="submit" value="lu 9:00"></td>
+                                <td><input id="ma9" class="scheduleButton"  type="submit" value="ma 9:00"></td>
+                                <td><input id="mi9" class="scheduleButton"  type="submit" value="mi 9:00"></td>
+                                <td><input id="ju9" class="scheduleButton"  type="submit" value="ju 9:00"></td>
+                                <td><input id="vi9" class="scheduleButton"  type="submit" value="vi 9:00"></td>
+                                <td><input id="sa9" class="scheduleButton"  type="submit" value="sa 9:00"></td>
+                                <td><input id="do9" class="scheduleButton"  type="submit" value="do 9:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu10" class="scheduleButton"  type="submit" value="lu 10:00"></td>
+                                <td><input id="ma10" class="scheduleButton"  type="submit" value="ma 10:00"></td>
+                                <td><input id="mi10" class="scheduleButton"  type="submit" value="mi 10:00"></td>
+                                <td><input id="ju10" class="scheduleButton"  type="submit" value="ju 10:00"></td>
+                                <td><input id="vi10" class="scheduleButton"  type="submit" value="vi 10:00"></td>
+                                <td><input id="sa10" class="scheduleButton"  type="submit" value="sa 10:00"></td>
+                                <td><input id="do10" class="scheduleButton"  type="submit" value="do 10:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu11" class="scheduleButton"  type="submit" value="lu 11:00"></td>
+                                <td><input id="ma11" class="scheduleButton"  type="submit" value="ma 11:00"></td>
+                                <td><input id="mi11" class="scheduleButton"  type="submit" value="mi 11:00"></td>
+                                <td><input id="ju11" class="scheduleButton"  type="submit" value="ju 11:00"></td>
+                                <td><input id="vi11" class="scheduleButton"  type="submit" value="vi 11:00"></td>
+                                <td><input id="sa11" class="scheduleButton"  type="submit" value="sa 11:00"></td>
+                                <td><input id="do11" class="scheduleButton"  type="submit" value="do 11:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu12" class="scheduleButton"  type="submit" value="lu 12:00"></td>
+                                <td><input id="ma12" class="scheduleButton"  type="submit" value="ma 12:00"></td>
+                                <td><input id="mi12" class="scheduleButton"  type="submit" value="mi 12:00"></td>
+                                <td><input id="ju12" class="scheduleButton"  type="submit" value="ju 12:00"></td>
+                                <td><input id="vi12" class="scheduleButton"  type="submit" value="vi 12:00"></td>
+                                <td><input id="sa12" class="scheduleButton"  type="submit" value="sa 12:00"></td>
+                                <td><input id="do12" class="scheduleButton"  type="submit" value="do 12:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu13" class="scheduleButton"  type="submit" value="lu 13:00"></td>
+                                <td><input id="ma13" class="scheduleButton"  type="submit" value="ma 13:00"></td>
+                                <td><input id="mi13" class="scheduleButton"  type="submit" value="mi 13:00"></td>
+                                <td><input id="ju13" class="scheduleButton"  type="submit" value="ju 13:00"></td>
+                                <td><input id="vi13" class="scheduleButton"  type="submit" value="vi 13:00"></td>
+                                <td><input id="sa13" class="scheduleButton"  type="submit" value="sa 13:00"></td>
+                                <td><input id="do13" class="scheduleButton"  type="submit" value="do 13:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu14" class="scheduleButton"  type="submit" value="lu 14:00"></td>
+                                <td><input id="ma14" class="scheduleButton"  type="submit" value="ma 14:00"></td>
+                                <td><input id="mi14" class="scheduleButton"  type="submit" value="mi 14:00"></td>
+                                <td><input id="ju14" class="scheduleButton"  type="submit" value="ju 14:00"></td>
+                                <td><input id="vi14" class="scheduleButton"  type="submit" value="vi 14:00"></td>
+                                <td><input id="sa14" class="scheduleButton"  type="submit" value="sa 14:00"></td>
+                                <td><input id="do14" class="scheduleButton"  type="submit" value="do 14:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu15" class="scheduleButton"  type="submit" value="lu 15:00"></td>
+                                <td><input id="ma15" class="scheduleButton"  type="submit" value="ma 15:00"></td>
+                                <td><input id="mi15" class="scheduleButton"  type="submit" value="mi 15:00"></td>
+                                <td><input id="ju15" class="scheduleButton"  type="submit" value="ju 15:00"></td>
+                                <td><input id="vi15" class="scheduleButton"  type="submit" value="vi 15:00"></td>
+                                <td><input id="sa15" class="scheduleButton"  type="submit" value="sa 15:00"></td>
+                                <td><input id="do15" class="scheduleButton"  type="submit" value="do 15:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu16" class="scheduleButton"  type="submit" value="lu 16:00"></td>
+                                <td><input id="ma16" class="scheduleButton"  type="submit" value="ma 16:00"></td>
+                                <td><input id="mi16" class="scheduleButton"  type="submit" value="mi 16:00"></td>
+                                <td><input id="ju16" class="scheduleButton"  type="submit" value="ju 16:00"></td>
+                                <td><input id="vi16" class="scheduleButton"  type="submit" value="vi 16:00"></td>
+                                <td><input id="sa16" class="scheduleButton"  type="submit" value="sa 16:00"></td>
+                                <td><input id="do16" class="scheduleButton"  type="submit" value="do 16:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu17" class="scheduleButton"  type="submit" value="lu 17:00"></td>
+                                <td><input id="ma17" class="scheduleButton"  type="submit" value="ma 17:00"></td>
+                                <td><input id="mi17" class="scheduleButton"  type="submit" value="mi 17:00"></td>
+                                <td><input id="ju17" class="scheduleButton"  type="submit" value="ju 17:00"></td>
+                                <td><input id="vi17" class="scheduleButton"  type="submit" value="vi 17:00"></td>
+                                <td><input id="sa17" class="scheduleButton"  type="submit" value="sa 17:00"></td>
+                                <td><input id="do17" class="scheduleButton"  type="submit" value="do 17:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu18" class="scheduleButton"  type="submit" value="lu 18:00"></td>
+                                <td><input id="ma18" class="scheduleButton"  type="submit" value="ma 18:00"></td>
+                                <td><input id="mi18" class="scheduleButton"  type="submit" value="mi 18:00"></td>
+                                <td><input id="ju18" class="scheduleButton"  type="submit" value="ju 18:00"></td>
+                                <td><input id="vi18" class="scheduleButton"  type="submit" value="vi 18:00"></td>
+                                <td><input id="sa18" class="scheduleButton"  type="submit" value="sa 18:00"></td>
+                                <td><input id="do18" class="scheduleButton"  type="submit" value="do 18:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu19" class="scheduleButton"  type="submit" value="lu 19:00"></td>
+                                <td><input id="ma19" class="scheduleButton"  type="submit" value="ma 19:00"></td>
+                                <td><input id="mi19" class="scheduleButton"  type="submit" value="mi 19:00"></td>
+                                <td><input id="ju19" class="scheduleButton"  type="submit" value="ju 19:00"></td>
+                                <td><input id="vi19" class="scheduleButton"  type="submit" value="vi 19:00"></td>
+                                <td><input id="sa19" class="scheduleButton"  type="submit" value="sa 19:00"></td>
+                                <td><input id="do19" class="scheduleButton"  type="submit" value="do 19:00"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="lu20" class="scheduleButton"  type="submit" value="lu 20:00"></td>
+                                <td><input id="ma20" class="scheduleButton"  type="submit" value="ma 20:00"></td>
+                                <td><input id="mi20" class="scheduleButton"  type="submit" value="mi 20:00"></td>
+                                <td><input id="ju20" class="scheduleButton"  type="submit" value="ju 20:00"></td>
+                                <td><input id="vi20" class="scheduleButton"  type="submit" value="vi 20:00"></td>
+                                <td><input id="sa20" class="scheduleButton"  type="submit" value="sa 20:00"></td>
+                                <td><input id="do20" class="scheduleButton"  type="submit" value="do 20:00"></td>
+                            </tr>
+                        </table>
+                        <a href="#" class="arrow right" id="arrow-right"></a>
+                </form>
+                <button class="buttonAnim" id="MyAppointmentButton"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>  Create Appointment</button>
+            </section>
+            <section id="searchSection" class="hiddenElement">
+                    <div class="wrap">
+                       <div class="search">
+                          <input type="text" class="searchTerm" placeholder="Who are you looking for?" id="searchItem">
+                          <button type="submit" class="searchButton" id="searchButton">
+                            <i class="fa fa-search"></i>
+                         </button> 
+                       </div>
+                    </div>
+                    <span id="searchError"></span>
+                    <br><br>
+                    <ul class="ulHome">
+                        <li>
+                            <div class = "listHome hiddenElement comment1">
+                                <h3 id="name1"></h3>
+                                <span id="user11"></span> <br>
+                                <span id="user12"></span> <br><br><br>
+                                <button type="submit"  class="addFriend" id="addFriend1">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                                </button>
+                                <button type="submit"  class="infoFriend" id="infoFriend1">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Information
+                                </button><br>
+                                <span class="errorMessage addrequest"></span>
+                                <br>
+                            </div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class = "listHome hiddenElement comment2">
+                                <h3 id="name2"></h3>
+                                <span id="user21"></span> <br>
+                                <span id="user22"></span> <br><br>
+                                <button type="submit"  class="addFriend" id="addFriend2">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                                </button>
+                                <button type="submit"  class="infoFriend" id="infoFriend1">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Information
+                                </button><br>
+                                <span class="errorMessage addrequest"></span>
+                                <br>
+                            </div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class = "listHome hiddenElement comment3">
+                                <h3 id="name3"></h3>
+                                <span id="user31"></span> <br>
+                                <span id="user32"></span> <br><br>
+                                <button type="submit"  class="addFriend" id="addFriend3">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                                </button>
+                                <button type="submit"  class="infoFriend" id="infoFriend1">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Information
+                                </button><br>
+                                <span class="errorMessage addrequest"></span>
+                                <br>
+                            </div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class = "listHome hiddenElement comment4">
+                                <h3 id="name4"></h3>
+                                <span id="user41"></span> <br>
+                                <span id="user42"></span> <br><br>
+                                <button type="submit"  class="addFriend" id="addFriend4">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                                </button>
+                                <button type="submit"  class="infoFriend" id="infoFriend1">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Information
+                                </button><br>
+                                <span class="errorMessage addrequest"></span>
+                                <br>
+                            </div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class = "listHome hiddenElement comment5">
+                                <h3 id="name5"></h3>
+                                <span id="user51"></span> <br>
+                                <span id="user52"></span> <br><br>
+                                <button type="submit"  class="addFriend" id="addFriend5">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                                </button>
+                                <button type="submit"  class="infoFriend" id="infoFriend1">
+                                <i class="fa fa-user-o" aria-hidden="true"></i> Information
+                                </button><br>
+                                <span class="errorMessage addrequest"></span>
+                                <br>
+                            </div>
+                            <br>
+                        </li>
+                    </ul>
+            </section>
+            <section id="requestsSection" class="hiddenElement">
+                <ul id="mainContactContent" class="ulHome">
+                    <br>
+                        <li class ="listHome hiddenElement request1">
+                            <h3 id="nameR1"></h3>
+                            <span id="userR1"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button>
+                            <br>
+                            <span class="errorMessage acceptRequest"></span>
+                            <br>
+                        </li>
+                        <li class = "listHome hiddenElement request2">
+                            <br>
+                            <h3 id="nameR2"></h3>
+                            <span id="userR2"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                            <br>
+                        </li>
+                        <li class = "listHome hiddenElement request3">
+                            <br>
+                            <h3 id="nameR3"></h3>
+                            <span id="userR3"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                            <br>
+                        </li>
+                        <li class = "listHome hiddenElement request4">
+                            <br>
+                            <h3 id="nameR4"></h3>
+                            <span id="userR4"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                            <br>
+                        </li>
+                        <li class = "listHome hiddenElement request5">
+                            <br>
+                            <h3 id="nameR5"></h3>
+                            <span id="userR5"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                            <br>
+                        </li>
+                </ul>
+            </section>
+            <section id="friendsSection" class="hiddenElement">
+                <div>
+                    <h3>Friend list</h3>
+                    <div id="friendList">
+                        <div id="friendsI">
+                            <div class="listHome friendInfo hiddenElement" id = "friend0" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend1" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend2" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend3" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend4" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend5" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend6" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend7" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend8" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                            <div class="listHome friendInfo hiddenElement" id = "friend9" value = "">
+                                <br>
+                                Name : Fulanito
+                                <br><br>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="chatSection" class="hiddenElement">
+                <div class="page-content__inner">
+                    <!-- $Choice-->
+                    <div class="promo__inner">
+                        <h1 class="promo__title">
+                        <font size="100">Help-Chat</font>
+                        </h1>
+                    </div>
+                    <div class="chat">			
+                        <iframe
+                            allow="microphone;"
+                            width="700"
+                            height="430"
+                            class="center"
+                            src="https://console.dialogflow.com/api-client/demo/embedded/b79b83e6-c662-4e29-a27e-85191aca3110">
+                        </iframe>  
+                    </div>
+                </div>
+            </section>
+            <section id="dataSection" class="hiddenElement">
+                <h1>My Info</h1>
+                <form id = "formData" action="../index.html">
+                    <fieldset id="updateData">
+                        <legend>New account registry</legend>
+                        <br>
+                        <div class="TextInput">
+                            First Name: 
+                            <br>
+                            <input type="text" name="FName" id="NameR"/>
+                            <br>
+                            <span class="errorMessage" id="errorName"></span> 
+                            <br>
+                            
+                            Last Name: 
+                            <br>
+                            <input type="text" name="LName" id="LNameR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorLast"></span> 
+                            <br>
+                            UserName: 
+                            <br>
+                            <div name="UserNameR"  id="UserNameR"></div>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorUser"></span> 
+                            <br>
+                            Email: 
+                            <br>
+                            <input type="email" name="EMailR" id="EMailR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorMail"></span> 
+                            <br>
+                            Password: 
+                            <br>
+                            <input type="password" name="PasswordR" id="PasswordR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorPass"></span> 
+                            <br>
+                            
+                            Password Confirmation: 
+                            <br>
+                            <input type="password" name="RPasswordR" id="RPasswordR"/>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorConfirm"></span> 
+                            <br>
+                        
+                            Country
+                            <br>
+                            <select name="Country" class="Countries" id="Country">
+                                <option value="0">Select a Country</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="USA">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="England">England</option>
+                                <option value="Australia">Australia</option>
+                                <option value="France">France</option>
+                                <option value="Bhutam">Bhutan</option>
+                                <option value="Bostswana">Bostswana</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                            <br>
+                            
+                            <span class="errorMessage" id="errorCountry"></span> 
+                            <br>
+
+                            Gender:
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="M" id="M"/>Masculine
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="F" id="F"/>Femenine
+                            <br>
+                            <input type="radio" class="radio" name="gender" value="O" id="O"/>Other
+                            <br>
+                            
+                            <span class="errorMessage" id="errorGender"></span> 
+                            <br>
+                            
+                            <div class=hiddenElement id=ifIsDoctorHome>
+        					    Fields with * are mandatory
+        					    <br>
+        					    <br>
+        				        <label id="tarjeta">PayPal: &nbsp; </label><br> 
+        				        <input name="Tarjeta" type="text" id="pay"><br>
+        				        <span class="errorMessage" id="errorPay"></span> 
+                                <br><br>
+        				        
+        				        <label for="clinica">*Clinic/Office: &nbsp; </label><br> 
+        				        <input name="Clinica" type="text"  id="clinic" ><br><span class="errorMessage" id="errorClinic"></span> 
+                            <br><br>
+        				        
+        				        <label for="Estado">*Address: &nbsp; </label><br> 
+        				        <input name="Estado" type="text"  id="address" >
+        				        
+        				        <br><br>Address format: Country, State, City, Outside Number, ZIP <br> Delimited by comas
+        				        <br>
+        				        <span class="errorMessage" id="errorAddress"></span> 
+                                <br><br>
+        				        
+        				        
+        				        <label for="titulo">*Tittle: &nbsp; </label>
+        				        <br>
+        				        <select id="tittle" name="titulo">
+        				            <option value="0">Select a titlle...</option>
+        				            <option value="medico">Medic/Doctor</option>
+                                    <option value="psicologo">Psychologist</option>
+                                    <option value="psiquiatra">Psychiatrist</option>
+                                    <option value="dentista">Dentist</option>
+                                    <option value="maestro">Teacher/tutor</option>
+                                </select>
+                                
+                                <br>
+                                <span class="errorMessage" id="errorTittle"></span> 
+                                <br>
+                                <br>
+        				        <label for="Especialidad">*Speciality: &nbsp; </label><br>
+        				        <input name="Especialidad" type="text"  id="speciality" ><br>
+        				        <span class="errorMessage" id="errorSpeciality"></span> 
+                                <br><br>
+        				        
+        				        <label for="Servicio1">*Service 1: &nbsp; </label><br>
+        				        <input name="Servicio1" type="text"  id="service1" ><br><br>
+        				        
+        				        <label for="Servicio2">Service 2: &nbsp; </label><br>
+        				        <input name="Servicio2" type="text"  id="service2"><br><br>
+        				        
+        				        <label for="Servicio3">Service 3: &nbsp; </label><br>
+        				        <input name="Servicio3" type="text"  id="service3"><br><br>
+        				        
+        				        <label for="Servicio4">Service 4: &nbsp; </label><br>
+        				        <input name="Servicio4" type="text"  id="service4"><br><br>
+        				        <br>
+        				        <span class="errorMessage" id="errorService"></span> 
+                                <br>
+        			        </div>
+        			        </div>
+
+                            <div>
+                                <span class="exitoMessage" id="exitoPHP"></span>
+                                <span class="errorMessage" id="errorPHP"></span> 
+                                    
+                                <br>
+                                <span>
+                                    <input type="submit" name="submit button" value="submit" id="submitFormUpdate" class="buttonAnim"/>
+                                </span>
+                            </div>
+                        </fieldset>
+                </form>
+            </section>
+            <section id="informationSection" class="hiddenElement">
+                <h1 id ='informationHeader'></h1>
+                    <form>
+                
+                        <fieldset id = "infomationFieldset">
+                        
+                        </fieldset>
+                    </form>
+                    <br>
+                    <div id="myModalD" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <span class="closeD">&times;</span>
+                            <!--<h2 class =>Appointments</h2>-->
+                            <h2 class = "DateSelected"></h2>
+                            </div>
+                            <div class="btn-group">
+                                <button class="min0 minButton"></button>
+                                <button class="min1 minButton"></button>
+                                <button class="min2 minButton"></button>
+                                <button class="min3 minButton"></button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                            <h3 class="modal-headerH"></h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="myModalAD" class="modal">
+
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <span class="closeD" id="closeAD">&times;</span>
+                            <h2>Add Event</h2>
+                          </div>
+                          <div class="modalA-bodyD">
+
+                              <form class="form-style-9">
+                              <ul>
+                              <li>
+                                  <input type="date" name="date" class="field-style field-split align-left" placeholder="Date" id="DateAD" required/>
+                              </li>
+                              <li>
+                                  <select name="Hour" class="field-style field-split align-left" id="HourD">
+                                      <option value="0">Start Hour</option>
+                                      <option value="8.0">8:00</option> <option value="8.1">8:15</option> <option value="8.2">8:30</option> <option value="8.3">8:45</option>
+                                      <option value="9.0">9:00</option> <option value="9.1">9:15</option> <option value="9.2">9:30</option> <option value="9.3">9:45</option>
+                                      <option value="10.0">10:00</option> <option value="10.1">10:15</option> <option value="10.2">10:30</option> <option value="10.3">10:45</option>
+                                      <option value="11.0">11:00</option> <option value="11.1">11:15</option> <option value="11.2">11:30</option> <option value="11.3">11:45</option>
+                                      <option value="12.0">12:00</option> <option value="12.1">12:15</option> <option value="12.2">12:30</option> <option value="12.3">12:45</option>
+                                      <option value="13.0">13:00</option> <option value="13.1">13:15</option> <option value="13.2">13:30</option> <option value="13.3">13:45</option>
+                                      <option value="14.0">14:00</option> <option value="14.1">14:15</option> <option value="14.2">14:30</option> <option value="14.3">14:45</option>
+                                      <option value="15.0">15:00</option> <option value="15.1">15:15</option> <option value="15.2">15:30</option> <option value="15.3">15:45</option>
+                                      <option value="16.0">16:00</option> <option value="16.1">16:15</option> <option value="16.2">16:30</option> <option value="16.3">16:45</option>
+                                      <option value="17.0">17:00</option> <option value="17.1">17:15</option> <option value="17.2">17:30</option> <option value="17.3">17:45</option>
+                                      <option value="18.0">18:00</option> <option value="18.1">18:15</option> <option value="18.2">18:30</option> <option value="18.3">18:45</option>
+                                      <option value="19.0">19:00</option> <option value="19.1">19:15</option> <option value="19.2">19:30</option> <option value="19.3">19:45</option>
+                                      <option value="20.0">20:00</option> <option value="20.1">20:15</option> <option value="20.2">20:30</option> <option value="20.3">20:45</option>
+                                  </select>
+                                  <select name="Duration" class="field-style field-split align-right" id="DurationD">
+                                      <option value="0">Duration in minutes</option>
+                                      <option value="0">15</option>
+                                      <option value="1">30</option>
+                                      <option value="2">45</option>
+                                      <option value="3">60</option>
+                                  </select>
+                              </li>
+                              <li>
+                              <textarea name="description" class="field-styleP" placeholder="Description" maxlength="150"     id="DescriptionD"></textarea>
+                              </li>
+                              <li>
+                                  Number of weeks to repeat: 
+                                  <select name="Weeks" class="field-style field-split align-left" id="WeeksD">
+                                      <option value="0">0</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                  </select>
+                              </li>
+                              <li>
+                                  <span id="errorAddEventD"></span>
+                              </li>
+                              <li>
+                              <input type="submit" value="Save Event" class="buttonAnim" id="saveEventD"/>
+                              </li>
+                              </ul>
+                              </form>
+                          </div>
+                              <div id="resultsEventD" class="hiddenElement">
+                                  <form name="PrePage" method = "post" action = "https://scotest.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="6c923b37-fa43-4a10-ac00-3309dee66044" /> <input type = "image" src ="//testcontent.authorize.net/images/buy-now-blue.gif" /> </form> 
+                              </div>
+                          <div class="modal-footer">
+                            <h3 class="modal-headerH"></h3>
+                          </div>
+                        </div>
+                    </div>
+
+                    <form style="display:inline;" method="post" id = "agendaDoctor">
+                        <a href="#" class="Darrow Dleft" id="Darrow-left"></a>
+                            <table id="Dhorario">
+                                <tr>
+                                    <th id="Dlu"></th>
+                                    <th id="Dma"></th>
+                                    <th id="Dmi"></th>
+                                    <th id="Dju"></th>
+                                    <th id="Dvi"></th>
+                                    <th id="Dsa"></th>
+                                    <th id="Ddo"></th>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu8" class="scheduleButton"  type="submit" value="lu 8:00"></td>
+                                    <td><input id="Dma8" class="scheduleButton"  type="submit" value="ma 8:00"></td>
+                                    <td><input id="Dmi8" class="scheduleButton"  type="submit" value="mi 8:00"></td>
+                                    <td><input id="Dju8" class="scheduleButton"  type="submit" value="ju 8:00"></td>
+                                    <td><input id="Dvi8" class="scheduleButton"  type="submit" value="vi 8:00"></td>
+                                    <td><input id="Dsa8" class="scheduleButton"  type="submit" value="sa 8:00"></td>
+                                    <td><input id="Ddo8" class="scheduleButton"  type="submit" value="do 8:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu9" class="scheduleButton"  type="submit" value="lu 9:00"></td>
+                                    <td><input id="Dma9" class="scheduleButton"  type="submit" value="ma 9:00"></td>
+                                    <td><input id="Dmi9" class="scheduleButton"  type="submit" value="mi 9:00"></td>
+                                    <td><input id="Dju9" class="scheduleButton"  type="submit" value="ju 9:00"></td>
+                                    <td><input id="Dvi9" class="scheduleButton"  type="submit" value="vi 9:00"></td>
+                                    <td><input id="Dsa9" class="scheduleButton"  type="submit" value="sa 9:00"></td>
+                                    <td><input id="Ddo9" class="scheduleButton"  type="submit" value="do 9:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu10" class="scheduleButton"  type="submit" value="lu 10:00"></td>
+                                    <td><input id="Dma10" class="scheduleButton"  type="submit" value="ma 10:00"></td>
+                                    <td><input id="Dmi10" class="scheduleButton"  type="submit" value="mi 10:00"></td>
+                                    <td><input id="Dju10" class="scheduleButton"  type="submit" value="ju 10:00"></td>
+                                    <td><input id="Dvi10" class="scheduleButton"  type="submit" value="vi 10:00"></td>
+                                    <td><input id="Dsa10" class="scheduleButton"  type="submit" value="sa 10:00"></td>
+                                    <td><input id="Ddo10" class="scheduleButton"  type="submit" value="do 10:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu11" class="scheduleButton"  type="submit" value="lu 11:00"></td>
+                                    <td><input id="Dma11" class="scheduleButton"  type="submit" value="ma 11:00"></td>
+                                    <td><input id="Dmi11" class="scheduleButton"  type="submit" value="mi 11:00"></td>
+                                    <td><input id="Dju11" class="scheduleButton"  type="submit" value="ju 11:00"></td>
+                                    <td><input id="Dvi11" class="scheduleButton"  type="submit" value="vi 11:00"></td>
+                                    <td><input id="Dsa11" class="scheduleButton"  type="submit" value="sa 11:00"></td>
+                                    <td><input id="Ddo11" class="scheduleButton"  type="submit" value="do 11:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu12" class="scheduleButton"  type="submit" value="lu 12:00"></td>
+                                    <td><input id="Dma12" class="scheduleButton"  type="submit" value="ma 12:00"></td>
+                                    <td><input id="Dmi12" class="scheduleButton"  type="submit" value="mi 12:00"></td>
+                                    <td><input id="Dju12" class="scheduleButton"  type="submit" value="ju 12:00"></td>
+                                    <td><input id="Dvi12" class="scheduleButton"  type="submit" value="vi 12:00"></td>
+                                    <td><input id="Dsa12" class="scheduleButton"  type="submit" value="sa 12:00"></td>
+                                    <td><input id="Ddo12" class="scheduleButton"  type="submit" value="do 12:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu13" class="scheduleButton"  type="submit" value="lu 13:00"></td>
+                                    <td><input id="Dma13" class="scheduleButton"  type="submit" value="ma 13:00"></td>
+                                    <td><input id="Dmi13" class="scheduleButton"  type="submit" value="mi 13:00"></td>
+                                    <td><input id="Dju13" class="scheduleButton"  type="submit" value="ju 13:00"></td>
+                                    <td><input id="Dvi13" class="scheduleButton"  type="submit" value="vi 13:00"></td>
+                                    <td><input id="Dsa13" class="scheduleButton"  type="submit" value="sa 13:00"></td>
+                                    <td><input id="Ddo13" class="scheduleButton"  type="submit" value="do 13:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu14" class="scheduleButton"  type="submit" value="lu 14:00"></td>
+                                    <td><input id="Dma14" class="scheduleButton"  type="submit" value="ma 14:00"></td>
+                                    <td><input id="Dmi14" class="scheduleButton"  type="submit" value="mi 14:00"></td>
+                                    <td><input id="Dju14" class="scheduleButton"  type="submit" value="ju 14:00"></td>
+                                    <td><input id="Dvi14" class="scheduleButton"  type="submit" value="vi 14:00"></td>
+                                    <td><input id="Dsa14" class="scheduleButton"  type="submit" value="sa 14:00"></td>
+                                    <td><input id="Ddo14" class="scheduleButton"  type="submit" value="do 14:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu15" class="scheduleButton"  type="submit" value="lu 15:00"></td>
+                                    <td><input id="Dma15" class="scheduleButton"  type="submit" value="ma 15:00"></td>
+                                    <td><input id="Dmi15" class="scheduleButton"  type="submit" value="mi 15:00"></td>
+                                    <td><input id="Dju15" class="scheduleButton"  type="submit" value="ju 15:00"></td>
+                                    <td><input id="Dvi15" class="scheduleButton"  type="submit" value="vi 15:00"></td>
+                                    <td><input id="Dsa15" class="scheduleButton"  type="submit" value="sa 15:00"></td>
+                                    <td><input id="Ddo15" class="scheduleButton"  type="submit" value="do 15:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu16" class="scheduleButton"  type="submit" value="lu 16:00"></td>
+                                    <td><input id="Dma16" class="scheduleButton"  type="submit" value="ma 16:00"></td>
+                                    <td><input id="Dmi16" class="scheduleButton"  type="submit" value="mi 16:00"></td>
+                                    <td><input id="Dju16" class="scheduleButton"  type="submit" value="ju 16:00"></td>
+                                    <td><input id="Dvi16" class="scheduleButton"  type="submit" value="vi 16:00"></td>
+                                    <td><input id="Dsa16" class="scheduleButton"  type="submit" value="sa 16:00"></td>
+                                    <td><input id="Ddo16" class="scheduleButton"  type="submit" value="do 16:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu17" class="scheduleButton"  type="submit" value="lu 17:00"></td>
+                                    <td><input id="Dma17" class="scheduleButton"  type="submit" value="ma 17:00"></td>
+                                    <td><input id="Dmi17" class="scheduleButton"  type="submit" value="mi 17:00"></td>
+                                    <td><input id="Dju17" class="scheduleButton"  type="submit" value="ju 17:00"></td>
+                                    <td><input id="Dvi17" class="scheduleButton"  type="submit" value="vi 17:00"></td>
+                                    <td><input id="Dsa17" class="scheduleButton"  type="submit" value="sa 17:00"></td>
+                                    <td><input id="Ddo17" class="scheduleButton"  type="submit" value="do 17:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu18" class="scheduleButton"  type="submit" value="lu 18:00"></td>
+                                    <td><input id="Dma18" class="scheduleButton"  type="submit" value="ma 18:00"></td>
+                                    <td><input id="Dmi18" class="scheduleButton"  type="submit" value="mi 18:00"></td>
+                                    <td><input id="Dju18" class="scheduleButton"  type="submit" value="ju 18:00"></td>
+                                    <td><input id="Dvi18" class="scheduleButton"  type="submit" value="vi 18:00"></td>
+                                    <td><input id="Dsa18" class="scheduleButton"  type="submit" value="sa 18:00"></td>
+                                    <td><input id="Ddo18" class="scheduleButton"  type="submit" value="do 18:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu19" class="scheduleButton"  type="submit" value="lu 19:00"></td>
+                                    <td><input id="Dma19" class="scheduleButton"  type="submit" value="ma 19:00"></td>
+                                    <td><input id="Dmi19" class="scheduleButton"  type="submit" value="mi 19:00"></td>
+                                    <td><input id="Dju19" class="scheduleButton"  type="submit" value="ju 19:00"></td>
+                                    <td><input id="Dvi19" class="scheduleButton"  type="submit" value="vi 19:00"></td>
+                                    <td><input id="Dsa19" class="scheduleButton"  type="submit" value="sa 19:00"></td>
+                                    <td><input id="Ddo19" class="scheduleButton"  type="submit" value="do 19:00"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="Dlu20" class="scheduleButton"  type="submit" value="lu 20:00"></td>
+                                    <td><input id="Dma20" class="scheduleButton"  type="submit" value="ma 20:00"></td>
+                                    <td><input id="Dmi20" class="scheduleButton"  type="submit" value="mi 20:00"></td>
+                                    <td><input id="Dju20" class="scheduleButton"  type="submit" value="ju 20:00"></td>
+                                    <td><input id="Dvi20" class="scheduleButton"  type="submit" value="vi 20:00"></td>
+                                    <td><input id="Dsa20" class="scheduleButton"  type="submit" value="sa 20:00"></td>
+                                    <td><input id="Ddo20" class="scheduleButton"  type="submit" value="do 20:00"></td>
+                                </tr>
+                            </table>
+                            <a href="#" class="Darrow Dright" id="Darrow-right"></a>
+                    </form>
+                    
+                    <div id="map" class="hiddenElement" style="width: 70%; height: 400px; background: grey"></div>
+            </section>
+        </main>
+        <footer class="bottom">
+            <footer>Web Applications - Final Project</footer>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../jquery/homeJQ.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </body>
+</html>

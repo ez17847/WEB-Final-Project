@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> HOME - The Jammer </title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+    </head>
+    <body class="contentH">
+        <header class="topRegister">
+            <h1> The Jammer </h1>
+            <h3> Connecting people since 2017 </h3>
+            <br>
+        </header>
+        <nav>
+            <ul id="menu">
+                <li id="home" class="selected" >
+                    Home
+                </li>
+                <li id="search">
+                    Search Users
+                </li>
+                <li id="profile">
+                    Profile
+                </li>
+                <li id="requests">
+                    Friend Requests
+                </li>
+                <li id="friends">
+                    Friends
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section id="homeSection">
+                <div>
+                    <span class="parte1">BIENVENIDOS !
+                        <p> <br>
+                            Esta página es la de inicio <br>
+                            Para demostrar el funcionamiento <br>
+                            Y el trabajo durante el lab 2 <br>
+                            En la materia de aplicaciones <br>
+                            Desarrollo de aplicaciones web <br>
+                        </p>
+                    </span>
+                </div>
+                <form id="commentArea">
+                        <fieldset>
+                            <legend>Comments</legend>
+                            <div >
+                                <div id="comments">
+                                    <div id="commentsI">
+
+                                    </div>
+                                </div>
+                        
+                            <textarea rows="4" cols="50" form="usrform" id="comment"></textarea>
+                            <br>
+                            <input type="submit" name="comment button" value="submit" id="commentForm" class="buttons"/>
+                        </fieldset>
+                </form>
+            </section>
+            <section id="searchSection" class="hiddenElement">
+                <div>
+                    Search Users by Name or By E-Mail. <br>
+                    Come on... <br>
+                    Don't be shy
+                    <div class="wrap">
+                       <div class="search">
+                          <input type="text" class="searchTerm" placeholder="Who are you looking for?" id="searchItem">
+                          <button type="submit" class="searchButton" id="searchButton">
+                            <i class="fa fa-search"></i>
+                         </button> 
+                       </div>
+                    </div>
+                    <br><br><br><br><br><br>
+                    <div>
+                        <div class = "commentJQ hiddenElement comment1">
+                            <br>
+                            <span id="name1"></span>
+                            <br>
+                            <span id="user1"></span> <br><br>
+                            <button type="submit"  class="addFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button><br>
+                            <span class="errorMessage addrequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement comment2">
+                            <br>
+                            <span id="name2"></span>
+                            <br>
+                            <span id="user2"></span> <br><br>
+                            <button type="submit"  class="addFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button><br>
+                            <span class="errorMessage addrequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement comment3">
+                            <br>
+                            <span id="name3"></span>
+                            <br>
+                            <span id="user3"></span> <br><br>
+                            <button type="submit"  class="addFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button><br>
+                            <span class="errorMessage addrequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement comment4">
+                            <br>
+                            <span id="name4"></span>
+                            <br>
+                            <span id="user4"></span> <br><br>
+                            <button type="submit"  class="addFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button><br>
+                            <span class="errorMessage addrequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement comment5">
+                            <br>
+                            <span id="name5"></span>
+                            <br>
+                            <span id="user5"></span> <br><br>
+                            <button type="submit"  class="addFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button><br>
+                            <span class="errorMessage addrequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </section>
+            <section id="requestsSection" class="hiddenElement">
+                <div id="mainContactContent">
+                    This is the Requests Section
+                    <br><br><br><br>
+                    <div>
+                        <div class = "commentJQ hiddenElement request1">
+                            <br>
+                            <span id="nameR1"></span>
+                            <br>
+                            <span id="userR1"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button>
+                            <br>
+                            <span class="errorMessage acceptRequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement request2">
+                            <br>
+                            <span id="nameR2"></span>
+                            <br>
+                            <span id="userR2"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement request3">
+                            <br>
+                            <span id="nameR3"></span>
+                            <br>
+                            <span id="userR3"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement request4">
+                            <br>
+                            <span id="nameR4"></span>
+                            <br>
+                            <span id="userR4"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <div>
+                        <div class = "commentJQ hiddenElement request5">
+                            <br>
+                            <span id="nameR5"></span>
+                            <br>
+                            <span id="userR5"></span> <br><br>
+                            <button type="submit"  class="acceptFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Add Friend
+                            </button>
+                            <button type="submit"  class="rejectFriend">
+                            <i class="fa fa-user-o" aria-hidden="true"></i> Reject Friend
+                            </button><br>
+                            <span class="errorMessage acceptRequest"></span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </section>
+            <section id="friendsSection" class="hiddenElement">
+                <div>
+                    This is my friend list
+                    <br><br><br><br>
+                    <div id="friendList">
+                        <div id="friendsI">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="profileSection" class="hiddenElement">
+                <h1>My Info</h1>
+                <div id="mainProfileContent">
+                    This is the Contact Section
+                </div>
+            </section>
+        </main>
+        <footer class="bottom">
+            <h6>The Jammer: Connecting and sharing with people since 2017</h6>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../jquery/homeJQ.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </body>
+</html>
